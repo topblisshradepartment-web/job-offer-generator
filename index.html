@@ -23570,8 +23570,8 @@ async function buildAndDownload(d) {
     }]
   });
 
-  const buf = await Packer.toBuffer(docxDoc);
-  const blob = new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+  const buf = await Packer.toBlob(docxDoc);
+  const blob = buf;
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   const safeName = d.fullName.replace(/\s+/g,'_');
